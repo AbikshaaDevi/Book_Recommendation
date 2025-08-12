@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quote Clustering</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #e7e68c; margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center;">
+
+    <div style="max-width: 600px; width: 100%; background-color: #ffc3c3; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1);">
+        <h2 style="text-align: center;">Quote Cluster Finder</h2>
+
+        <form method="POST" style="margin-top: 20px; text-align: center;">
+            <label for="quote">Enter a quote:</label><br><br>
+            <textarea name="quote" rows="4" cols="50" required></textarea><br><br>
+            <button type="submit">Find Cluster</button>
+        </form>
+
+        {% if quotes %}
+        <hr>
+        <h3 style="text-align: center;">Similar Quotes:</h3>
+        <ul>
+            {% for q in quotes %}
+            <li>{{ q }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+</body>
+</html>
